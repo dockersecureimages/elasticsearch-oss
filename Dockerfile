@@ -3,10 +3,10 @@ LABEL website="Secure Docker Images https://secureimages.dev"
 LABEL description="We secure your business from scratch."
 LABEL maintainer="hireus@secureimages.dev"
 
-ARG ELASTICSEARCH_VERSION=7.5.2
+ARG ELASTICSEARCH_VERSION=7.6.0
 ARG ES_TARBALL_ASC="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-${ELASTICSEARCH_VERSION}-no-jdk-linux-x86_64.tar.gz.asc"
 ARG EXPECTED_SHA_URL="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-${ELASTICSEARCH_VERSION}-no-jdk-linux-x86_64.tar.gz.sha512"
-ARG ES_TARBALL_SHA="ea494dfb743e5ea12dbbc269d8103fa08644c580291eb88b25000743d272aa87c8709ac9fb2939ad387d5d335f0795c943114b8471074bba7d583494bbc6d100"
+ARG ES_TARBALL_SHA="521f3b7b3f4624f0039b7e7ba75d811f5d79fb91112c0eca261e2693327f75047be13d147536a33192cacdc5c9c84f94a6090e4678c915a1d59b0b89235eb8a5"
 ARG GPG_KEY="46095ACC8548582C1A2699A9D27D666CD88E42B4"
 
 ENV PATH=/usr/share/elasticsearch/bin:$PATH \
