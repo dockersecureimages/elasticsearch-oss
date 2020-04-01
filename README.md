@@ -6,25 +6,25 @@ Elasticsearch OSS, image is based on the Alpine base image with 0 vulnerabilitie
 
 Security scanning using Clair
 ```
-clair-scanner secureimages/elasticsearch-oss:7.6.1-alpine-3.11.5
-2020/03/24 17:11:28 [INFO] ▶ Start clair-scanner
-2020/03/24 17:11:31 [INFO] ▶ Server listening on port 9279
-2020/03/24 17:11:31 [INFO] ▶ Analyzing dac63304c60354902922613d675ec533c6e10879f72d49b7602575ae5d5f9257
-2020/03/24 17:11:31 [INFO] ▶ Analyzing 75374ef8a15c97e86973833b122ba48ee26953fcaa415090282076206f161b98
-2020/03/24 17:11:31 [INFO] ▶ Analyzing 10f109fef464dd145c388cc752f2ded25e5ec02cca87988edea591aabf064b0d
-2020/03/24 17:11:31 [INFO] ▶ Analyzing 70e117b83dd4d25341a9fa69c1b5a2ccaca3ba1a92179370d0a937e278d78be0
-2020/03/24 17:11:31 [INFO] ▶ Image [secureimages/elasticsearch-oss:7.6.1-alpine-3.11.5] contains NO unapproved vulnerabilities
+clair-scanner secureimages/elasticsearch-oss:7.6.2-alpine-3.11.5
+2020/04/01 15:48:35 [INFO] ▶ Start clair-scanner
+2020/04/01 15:48:37 [INFO] ▶ Server listening on port 9279
+2020/04/01 15:48:37 [INFO] ▶ Analyzing dac63304c60354902922613d675ec533c6e10879f72d49b7602575ae5d5f9257
+2020/04/01 15:48:37 [INFO] ▶ Analyzing acb1eefc22473825d83ac2d42dc8de2f23991f8eb6d3e9230ada5e3beba74b4b
+2020/04/01 15:48:37 [INFO] ▶ Analyzing 183da8b1dcee4c4d2c9f8b5efdf780eb65d4b206f2ccb693c3354104fc5b0e2d
+2020/04/01 15:48:37 [INFO] ▶ Analyzing 60e8e1f2d4fdf306f6b45dba3ce7ba0353102e4fa6db575d27d82e7b252c5388
+2020/04/01 15:48:37 [INFO] ▶ Image [secureimages/elasticsearch-oss:7.6.2-alpine-3.11.5] contains NO unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.5.3 --no-progress secureimages/elasticsearch-oss:7.6.1-alpine-3.11.5
-2020-03-24T15:11:34.954Z        INFO    Need to update DB
-2020-03-24T15:11:34.954Z        INFO    Downloading DB...
-2020-03-24T15:11:38.689Z        INFO    Reopening DB...
-2020-03-24T15:11:43.721Z        INFO    Detecting Alpine vulnerabilities...
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.5.3 --no-progress secureimages/elasticsearch-oss:7.6.2-alpine-3.11.5
+2020-04-01T12:48:46.083Z        INFO    Need to update DB
+2020-04-01T12:48:46.083Z        INFO    Downloading DB...
+2020-04-01T12:48:51.479Z        INFO    Reopening DB...
+2020-04-01T12:48:56.390Z        INFO    Detecting Alpine vulnerabilities...
 
-secureimages/elasticsearch-oss:7.6.1-alpine-3.11.5 (alpine 3.11.5)
+secureimages/elasticsearch-oss:7.6.2-alpine-3.11.5 (alpine 3.11.5)
 ==================================================================
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
@@ -33,33 +33,33 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 
 [https://www.docker.elastic.co/](https://www.docker.elastic.co/)
 ```
-docker pull docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.1
+docker pull docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.2
 ```
 
 Security scanning using Clair
 ```
-clair-scanner docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.1
-2020/03/24 17:11:49 [INFO] ▶ Start clair-scanner
-2020/03/24 17:11:59 [INFO] ▶ Server listening on port 9279
-2020/03/24 17:11:59 [INFO] ▶ Analyzing efabb8e7a64ff0670af40775b5aa02a8e19f73baa9f9e24aef8ce37a563f632d
-2020/03/24 17:12:00 [INFO] ▶ Analyzing 505ffa8057ea7f09b5f5fbe5af8f7f6641ad5714a51fd04f9499950462d4a9b6
-2020/03/24 17:12:01 [INFO] ▶ Analyzing 4a076a7c5bdd6cd8e2fa6bbaecef505c5479b17f1213105763fce301e1f29ea6
-2020/03/24 17:12:01 [INFO] ▶ Analyzing 74f738f0127464d87783cccaa04b00d79599f069e222704950f6612d34c4320b
-2020/03/24 17:12:01 [INFO] ▶ Analyzing 60ca3011bf18cf6c998a2fe41d40de08dabd0b9ab0b0e7aa50d638fe129075a5
-2020/03/24 17:12:01 [INFO] ▶ Analyzing c6f381f9406a00a190a6d887f8bb2bd258b0c4975e2b5da860710a64e476a778
-2020/03/24 17:12:01 [INFO] ▶ Analyzing d54d71b1ce7b7f5f77c3852fc00f4e944aa726301dc9981556fe6bff222269a4
-2020/03/24 17:12:01 [INFO] ▶ Image [docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.1] contains NO unapproved vulnerabilities
+clair-scanner docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.2
+2020/04/01 15:49:11 [INFO] ▶ Start clair-scanner
+2020/04/01 15:49:23 [INFO] ▶ Server listening on port 9279
+2020/04/01 15:49:23 [INFO] ▶ Analyzing efabb8e7a64ff0670af40775b5aa02a8e19f73baa9f9e24aef8ce37a563f632d
+2020/04/01 15:49:23 [INFO] ▶ Analyzing 2438ff49e7169e3866489720c24b0380a507be1b4310fc85713075cf94a3281f
+2020/04/01 15:49:24 [INFO] ▶ Analyzing 44da533f6b62505320103351f4a2abf7356f49742ffcf7af0624e86f8a287826
+2020/04/01 15:49:24 [INFO] ▶ Analyzing 4bcdd24e74c140a638ed0906552795cf55f91a73d8631aca4854222cb3896539
+2020/04/01 15:49:24 [INFO] ▶ Analyzing 15126ac4404e6cac84017641e6a6f989d4b76becff4ec82da55ffe80d2f257c1
+2020/04/01 15:49:24 [INFO] ▶ Analyzing 3f0b99f207beb4bb5ae50d6a7b51e4fc9696759f1f2638564c4a2dd7093f2eb7
+2020/04/01 15:49:25 [INFO] ▶ Analyzing 0e616a7fba66170d9c6ab7d04f65fb49c6be22f1830a64c0d9efc48f9e011564
+2020/04/01 15:49:25 [INFO] ▶ Image [docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.2] contains NO unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.5.3 --no-progress docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.1
-2020-03-24T15:12:03.382Z        INFO    Need to update DB
-2020-03-24T15:12:03.382Z        INFO    Downloading DB...
-2020-03-24T15:12:08.118Z        INFO    Reopening DB...
-2020-03-24T15:12:21.568Z        INFO    Detecting RHEL/CentOS vulnerabilities...
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.5.3 --no-progress docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.2
+2020-04-01T12:49:27.294Z        INFO    Need to update DB
+2020-04-01T12:49:27.294Z        INFO    Downloading DB...
+2020-04-01T12:49:40.600Z        INFO    Reopening DB...
+2020-04-01T12:50:09.697Z        INFO    Detecting RHEL/CentOS vulnerabilities...
 
-docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.1 (centos 7.7.1908)
+docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.2 (centos 7.7.1908)
 =========================================================================
-Total: 637 (UNKNOWN: 0, LOW: 67, MEDIUM: 460, HIGH: 106, CRITICAL: 4)
+Total: 635 (UNKNOWN: 0, LOW: 66, MEDIUM: 459, HIGH: 106, CRITICAL: 4)
 ```
