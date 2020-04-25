@@ -1,4 +1,4 @@
-FROM alpine:3.11.5
+FROM alpine:3.11.6
 LABEL website="Secure Docker Images https://secureimages.dev"
 LABEL description="We secure your business from scratch."
 LABEL maintainer="hireus@secureimages.dev"
@@ -44,6 +44,10 @@ RUN apk add --no-cache openjdk11-jre-headless su-exec bash ;\
     done ;\
     apk del --purge .build-deps ;\
     rm -rf /tmp/* /var/cache/apk/* /usr/share/elasticsearch/jdk
+
+# fixing CVE-2020-1967
+RUN apk add --upgrade --no-cache openssl ;\
+    rm -rf /var/cache/apk/* /tmp/*
 
 # TODO: remove this (it removes X-Pack ML so it works on Alpine)
 RUN rm -rf /usr/share/elasticsearch/modules/x-pack-ml/platform/linux-x86_64
