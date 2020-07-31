@@ -2,64 +2,64 @@
 
 Elasticsearch OSS, image is based on the Alpine base image with 0 vulnerabilities.
 
-## Current Docker image (~293MB)
+## Current Docker image (~292MB)
 
 Security scanning using Clair
 ```
-clair-scanner secureimages/elasticsearch-oss:7.8.0-alpine-3.12.0
-2020/06/19 21:24:53 [INFO] ▶ Start clair-scanner
-2020/06/19 21:24:56 [INFO] ▶ Server listening on port 9279
-2020/06/19 21:24:56 [INFO] ▶ Analyzing 76de98d374759ed05698adec9aa042db7bc0f62c25fb612c0f9be1419a581421
-2020/06/19 21:24:56 [INFO] ▶ Analyzing e479b4a929f5c17d8e21543944eed6a12d3f12c89b6702692d80645f2554fbc4
-2020/06/19 21:24:56 [INFO] ▶ Analyzing 23554ea8ffebea2c6ad8ebd6af1e706d5d0051a06e46252c1f8e1877ce5eb380
-2020/06/19 21:24:56 [INFO] ▶ Analyzing e60d1997ff66bda2c4428b793624d9b49be16c05e99e6f7760ad0830e3cf7f5c
-2020/06/19 21:24:56 [INFO] ▶ Image [secureimages/elasticsearch-oss:7.8.0-alpine-3.12.0] contains NO unapproved vulnerabilities
+clair-scanner secureimages/elasticsearch-oss:7.8.1-alpine-3.12.0
+2020/07/31 17:04:04 [INFO] ▶ Start clair-scanner
+2020/07/31 17:04:07 [INFO] ▶ Server listening on port 9279
+2020/07/31 17:04:07 [INFO] ▶ Analyzing 76de98d374759ed05698adec9aa042db7bc0f62c25fb612c0f9be1419a581421
+2020/07/31 17:04:07 [INFO] ▶ Analyzing c22f5f5452504fa7e38c02458fc9787bd4433da3b0c7a645fd11e69ddc3ddf5c
+2020/07/31 17:04:07 [INFO] ▶ Analyzing 74dbb4468b10d2175aa058534d17f48245cc700c538058df12daf4251ef8fbab
+2020/07/31 17:04:07 [INFO] ▶ Analyzing 85cedf795aaad99c2338309fbe0d0c3c5c973b53322867f5b5862ed4caa4b5fe
+2020/07/31 17:04:07 [INFO] ▶ Image [secureimages/elasticsearch-oss:7.8.1-alpine-3.12.0] contains NO unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.9.1 --no-progress secureimages/elasticsearch-oss:7.8.0-alpine-3.12.0
-2020-06-19T18:24:59.505Z        INFO    Need to update DB
-2020-06-19T18:24:59.505Z        INFO    Downloading DB...
-2020-06-19T18:25:07.140Z        INFO    Detecting Alpine vulnerabilities...
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.10.1 --no-progress secureimages/elasticsearch-oss:7.8.1-alpine-3.12.0
+2020-07-31T14:04:11.629Z        INFO    Need to update DB
+2020-07-31T14:04:11.629Z        INFO    Downloading DB...
+2020-07-31T14:04:18.686Z        INFO    Detecting Alpine vulnerabilities...
 
-secureimages/elasticsearch-oss:7.8.0-alpine-3.12.0 (alpine 3.12.0)
+secureimages/elasticsearch-oss:7.8.1-alpine-3.12.0 (alpine 3.12.0)
 ==================================================================
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
 
-## Official Docker image (~696MB)
+## Official Docker image (~698MB)
 
 [https://www.docker.elastic.co/](https://www.docker.elastic.co/)
 ```
-docker pull docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.0
+docker pull docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.1
 ```
 
 Security scanning using Clair
 ```
-clair-scanner docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.0
-2020/06/19 21:25:12 [INFO] ▶ Start clair-scanner
-2020/06/19 21:25:22 [INFO] ▶ Server listening on port 9279
-2020/06/19 21:25:22 [INFO] ▶ Analyzing c53e4ebe5d0a558645655ec8b3e667ed7cae98e3252a08914c1ab5a08cef4da0
-2020/06/19 21:25:22 [INFO] ▶ Analyzing 0ac0760e9f7b034362396a6556315afa4e45eb359c1f1dc8159868685c621c69
-2020/06/19 21:25:22 [INFO] ▶ Analyzing fb5da3ff03fecfc418d98b375c2e736d977d263ee7256d416470671304e0631a
-2020/06/19 21:25:23 [INFO] ▶ Analyzing a2fee0f7794ebed0b412808cf76a4777d7c602919062ee4041d73196cd07eab4
-2020/06/19 21:25:23 [INFO] ▶ Analyzing 955ec06787ef933de83fa10fabed9db078963ee011c8c93edea44b544d2029ea
-2020/06/19 21:25:23 [INFO] ▶ Analyzing c391e51ba6de3e092fc5d66cdeb302efd2ed080c3e5f56f3981714e097108ce1
-2020/06/19 21:25:23 [INFO] ▶ Analyzing 7a6de9978b50f855f7db09da607496969cc48b4080f07d9a8d4cf158c4cd876d
-2020/06/19 21:25:23 [INFO] ▶ Analyzing b87e15c224d6aa5be2b4ebf4b39ba348530b1fa1cc3bbb5512991671867113e7
-2020/06/19 21:25:23 [INFO] ▶ Analyzing c557a15c8e97fa4759feb703c8a17c4c9fa10bc97b2ce71e96a9f542de0f33b9
-2020/06/19 21:25:23 [INFO] ▶ Image [docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.0] contains NO unapproved vulnerabilities
+clair-scanner docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.1
+2020/07/31 17:04:35 [INFO] ▶ Start clair-scanner
+2020/07/31 17:04:45 [INFO] ▶ Server listening on port 9279
+2020/07/31 17:04:45 [INFO] ▶ Analyzing c53e4ebe5d0a558645655ec8b3e667ed7cae98e3252a08914c1ab5a08cef4da0
+2020/07/31 17:04:45 [INFO] ▶ Analyzing ac7518d96f4d4197b1040646dcf79af96ddc9ad7f06333a20a8a8f3512035932
+2020/07/31 17:04:45 [INFO] ▶ Analyzing 294f8f3468f2b3eb8c584e6bf5756159a33c5d2225ab65e7a9923a5e03ed3a7f
+2020/07/31 17:04:46 [INFO] ▶ Analyzing 44ead99e8d09c67ef36b979155fa6451ffc64884735a31c2ef3764edd4d33274
+2020/07/31 17:04:46 [INFO] ▶ Analyzing cbc98a22010328928100260fb0fdf8ab466bf02b6791af24027bc8adf2289dc7
+2020/07/31 17:04:46 [INFO] ▶ Analyzing f24ea10ff618536229b641df801dae62f7cbd17e4178ea31817b281a11f033b2
+2020/07/31 17:04:46 [INFO] ▶ Analyzing 34c99480e023101441cb1e6e1cd4bd772381fba12704fdb5080f6025ca6e7d19
+2020/07/31 17:04:46 [INFO] ▶ Analyzing 71992f6fc5edab6d907f9989653b34d5f366831419ada159c91b8aa4dad5aa2c
+2020/07/31 17:04:46 [INFO] ▶ Analyzing df37e30ec5334dc271371c0a9995018b528714b401a960e3642d27141f72c8b8
+2020/07/31 17:04:46 [INFO] ▶ Image [docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.1] contains NO unapproved vulnerabilities
 ```
 
 Security scanning using Trivy
 ```
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.9.1 --no-progress docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.0
-2020-06-19T18:25:25.513Z        INFO    Need to update DB
-2020-06-19T18:25:25.513Z        INFO    Downloading DB...
-2020-06-19T18:25:40.404Z        INFO    Detecting RHEL/CentOS vulnerabilities...
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro aquasec/trivy:0.10.1 --no-progress docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.1
+2020-07-31T14:04:49.055Z        INFO    Need to update DB
+2020-07-31T14:04:49.055Z        INFO    Downloading DB...
+2020-07-31T14:05:03.551Z        INFO    Detecting RHEL/CentOS vulnerabilities...
 
-docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.0 (centos 7.8.2003)
+docker.elastic.co/elasticsearch/elasticsearch-oss:7.8.1 (centos 7.8.2003)
 =========================================================================
-Total: 621 (UNKNOWN: 0, LOW: 364, MEDIUM: 252, HIGH: 5, CRITICAL: 0)
+Total: 624 (UNKNOWN: 0, LOW: 365, MEDIUM: 254, HIGH: 5, CRITICAL: 0)
 ```
