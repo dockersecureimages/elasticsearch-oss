@@ -1,13 +1,13 @@
-FROM alpine:3.12.0
+FROM alpine:3.13.2
 LABEL website="Secure Docker Images https://secureimages.dev"
 LABEL description="We secure your business from scratch."
-LABEL maintainer="hireus@secureimages.dev"
+LABEL maintainer="support@secureimages.dev"
 
-ARG ELASTICSEARCH_VERSION=7.9.1
+ARG ELASTICSEARCH_VERSION=7.10.2
 ARG ES_TARBALL_ASC="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-${ELASTICSEARCH_VERSION}-no-jdk-linux-x86_64.tar.gz.asc"
-## https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.9.1-no-jdk-linux-x86_64.tar.gz.sha512
+## https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.10.2-no-jdk-linux-x86_64.tar.gz.sha512
 ARG EXPECTED_SHA_URL="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-${ELASTICSEARCH_VERSION}-no-jdk-linux-x86_64.tar.gz.sha512"
-ARG ES_TARBALL_SHA="d306cc63c44dd553f344babf310435bdd857fe81d149ea8179b099cffaebb061d5f4fd51c95e5d65131b15328f390db846b4f485a864ab2b352573d46025c411"
+ARG ES_TARBALL_SHA="7b63237996569ccdc7c9d9e7cc097fcb23865396eddac30e5f02543484220d2fc70a7285b430877e5e76a5d8716d9682de9fc40d5e57a08f331e82011fc59756"
 ARG GPG_KEY="46095ACC8548582C1A2699A9D27D666CD88E42B4"
 
 ENV PATH=/usr/share/elasticsearch/bin:$PATH \
